@@ -1,10 +1,9 @@
 // app/_layout.tsx
-
+ //@jsx React.createElement 
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
-import { Stack } from 'expo-router';
+import { Stack, Tabs } from 'expo-router';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import {Tabs} from 'expo-router';
 
 
 export  function RootLayout() {
