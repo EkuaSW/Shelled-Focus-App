@@ -14,7 +14,7 @@ export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Home Screen</Text>
-      <Text style={styles.subtitles}>Welcome to the main app, Dorcas! 🎉</Text>
+      <Text style={styles.subtitles}>Welcome to the main app, Dorcas</Text>
       <Button title="Welcome Page "
       onPress={() => router.replace('./Screens/WelcomeScreen')}></Button>
     </SafeAreaView>
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'peachpuff',
+    backgroundColor: 'linen',
   },
   title: {
     fontSize: 28,

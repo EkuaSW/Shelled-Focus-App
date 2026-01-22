@@ -1,7 +1,7 @@
-import React from 'react';
-import { Text, Button, StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import React from 'react';
+import { Button, StyleSheet, Text } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 
@@ -11,6 +11,10 @@ const router = useRouter();
     return (
         <SafeAreaView style={styles.container}>
           <Text style={styles.title}>This is the Shell Screen</Text>
+          <Button
+          title="Go to Room"
+          onPress={() => router.push('/Screens/RoomScreen') }//.push allows user to go back
+          />
         </SafeAreaView>
       );
 }
@@ -27,7 +31,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'peachpuff',
+    backgroundColor: 'linen',
   },
   title: {
     fontSize: 32,
