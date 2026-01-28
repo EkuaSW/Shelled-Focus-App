@@ -1,4 +1,5 @@
 
+//THIS IS THE PROFILE SCREEN 
 
 // app/welcome.tsx
 import React from 'react';

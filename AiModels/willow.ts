@@ -1,7 +1,7 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // 1. Initialize the SDK with your API Key
-// Note: Ensure your EXPO_PUBLIC_GEMINI_API_KEY is defined in your .env
+
 const apiKey = process.env.EXPO_PUBLIC_GEMINI_API_KEY || "";
 const genAI = new GoogleGenerativeAI(apiKey);
 
@@ -23,6 +23,6 @@ export const getGeminiResponse = async (prompt: string): Promise<string> => {
     return text;
   } catch (error) {
     console.error("Error in Willow Model:", error);
-    throw error; // Let the RoomScreen catch this for the UI error message
+    throw error; 
   }
 };
