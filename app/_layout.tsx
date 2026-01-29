@@ -93,6 +93,7 @@ export default function TabLayout() {
       <Tabs.Screen
       name="Screens/RoomScreen"
       options={{
+        title: 'Chat with Willow',
         href: null, //so that the screen screen doesnt show 
       }}
       />
