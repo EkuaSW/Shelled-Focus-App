@@ -18,6 +18,7 @@ type Mood = 'angry'| 'happy' |'just ok'| 'sad'|'tired';
 interface LogMood{ //picking the mood 
   date: string ;
   mood: Mood;
+  //note: string; //for journal entry 
 }
 
 
@@ -47,7 +48,9 @@ export default function HomeScreen() {
       const newEntry: LogMood = {
         date: new Date().toISOString().split('T')[0],// truncated to the date only
         mood: selectedMood,
+        
       };
+
       await AsyncStorage.setItem('@last_mood', JSON.stringify(newEntry));
       setCurrentMood(selectedMood);
       //Alert.alert("Mood Logged", `The snails are glad you shared that you're feeling ${selectedMood}.`);
@@ -70,10 +73,10 @@ export default function HomeScreen() {
               styles.moodLabel, 
               currentMood === m ? styles.labelSelected : styles.labelUnselected
             ]}>
+              
             </Text>
             <Text style={styles.moodLabel}>{m}</Text>
           </TouchableOpacity>
-
         )
       )}
       </View>
@@ -138,12 +141,14 @@ const styles = StyleSheet.create({
   },
 
   moodText: {
-    fontSize: 30
+    fontSize: 30,
   },
   moodLabel: {
-    fontSize: 10,
+    fontSize: 13,
     color: 'saddlebrown',
-    marginTop: 5
+    marginTop: -5,
+    marginBottom:0.5,
+    justifyContent: 'center'
   },
 
   status:{
@@ -151,11 +156,35 @@ const styles = StyleSheet.create({
     fontStyle: 'italic',
     color: 'saddlebrown'
   },
+
   labelSelected:{
     color: 'linen'
   },
+
   labelUnselected: {
     color: 'saddlebrown'
+  }, 
+
+  chipSelected: {
+    backgroundColor: 'saddlebrown',
+  },
+
+  chipUnselected:{
+    backgroundColor: 'transparent '
+  },
+
+  moodChip: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    gap: 10,
+  },
+
+  moodGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    gap: 10,
   }
 
 
