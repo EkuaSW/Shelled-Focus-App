@@ -47,7 +47,7 @@ export default function HomeScreen() {
   // Logic to handle the final submission
   const handleFinalSubmit = async () => {
     if (!currentMood) {
-      Alert.alert("Willow asks...", "Could you pick a mood before we save this?");
+      Alert.alert("Willow asks...", "Could you pick a mood before we save this?");//not really necessary since buton doesnt show
       return;
     }
 
@@ -58,18 +58,18 @@ export default function HomeScreen() {
         note: note,
       };
 
-      await AsyncStorage.setItem('@last_mood', JSON.stringify(newEntry));
-      
+      await AsyncStorage.setItem('@last_mood', JSON.stringify(newEntry)); //date. mood, and current text in box saved here  
+       
       Alert.alert("Entry Saved", "Willow has tucked your thoughts away in the garden.");
       
-      // Optional: Clear the note after saving
+      // Clearing the note after saving
       setNote('');
     } catch (e) {
       console.error("Failed to save entry", e);
     }
   };
 
-  const savedMood = async (selectedMood: Mood) => {
+  const savedMood = async (selectedMood: Mood) => { //currently only saves one mood and entry keeps overwriting each new entry
     try{
       const newEntry: LogMood = {
         date: new Date().toISOString().split('T')[0],// truncated to the date only
@@ -77,9 +77,8 @@ export default function HomeScreen() {
         note: note, // saving the note along with the mood
       };
 
-      await AsyncStorage.setItem('@last_mood', JSON.stringify(newEntry));
+      await AsyncStorage.setItem('@last_mood', JSON.stringify(newEntry));//saving the submitted entry locally; docs or library
       setCurrentMood(selectedMood);
-      //Alert.alert("Mood Logged", `The snails are glad you shared that you're feeling ${selectedMood}.`);
     } catch (e){
       console.error("Failed to save mood", e);
     }

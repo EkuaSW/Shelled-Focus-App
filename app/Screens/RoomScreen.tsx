@@ -9,7 +9,8 @@ import {getGeminiResponse} from '../../AiModels/willow';
 
 import React, {useState} from 'react';
 import { Text, Button, StyleSheet, View, TextInput, 
-        ScrollView, TouchableOpacity,ActivityIndicator } from 'react-native';
+        ScrollView, TouchableOpacity,ActivityIndicator, 
+        KeyboardAvoidingView, Platform} from 'react-native';
         
 import { useRouter } from 'expo-router';
 import {SafeAreaView} from 'react-native-safe-area-context';
@@ -70,6 +71,11 @@ const sendMessage = async () => {
     
 return (
         <SafeAreaView style={styles.container}>
+          {/* Adding keyboard avoiding view  */}
+          <KeyboardAvoidingView
+          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+          style={{flex:1, width: '100%'}}
+          ></KeyboardAvoidingView>
       <Text style={styles.headerTitle}>Study Room with Willow</Text>
       
       <ScrollView 
