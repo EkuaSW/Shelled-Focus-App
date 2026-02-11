@@ -1,3 +1,4 @@
+//Changing to Cave Screen
 import { useRouter } from 'expo-router';
 import React from 'react';
 import { Button, StyleSheet, Text } from 'react-native';
@@ -10,10 +11,15 @@ const router = useRouter();
 
     return (
         <SafeAreaView style={styles.container}>
-          <Text style={styles.title}>This is the Shell Screen</Text>
+          <Text style={styles.title}>This is the Cave Screen</Text>
           <Button
-          title="Go to Room"
-          onPress={() => router.push('/Screens/RoomScreen') }//.push allows user to go back
+          title="Enter Willow's Cave"
+          onPress={() => router.push('/Screens/RoomScreen') }//.push allows user to go back(allegedly)
+          />
+          
+          <Button
+          title="Enter Bamboo's forest"
+          onPress={() => router.push('/Screens/BambooScreen')}
           />
         </SafeAreaView>
       );

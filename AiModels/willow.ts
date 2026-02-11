@@ -1,6 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-// 1. Initialize the SDK with your API Key
+// Initialize the SDK with your API Key
 
 const apiKey = process.env.EXPO_PUBLIC_GEMINI_API_KEY || "";
 const genAI = new GoogleGenerativeAI(apiKey);
@@ -10,7 +10,7 @@ export const getGeminiResponse = async (prompt: string): Promise<string> => {
     //  Get  model 
     const model = genAI.getGenerativeModel({ 
       model: "gemini-3-flash-preview", 
-      systemInstruction: "Your name is Willow. You are kind, friendly, nerdy, and artistic. Respond in 3 sentences or less.",
+      systemInstruction: "Your name is Willow. You are  a kind, friendly, nerdy, and artistic brown bear. Respond in 3 short sentences or less.",
     });
 
     //Generate content based on the user's prompt

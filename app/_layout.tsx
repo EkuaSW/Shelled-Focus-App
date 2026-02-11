@@ -22,7 +22,7 @@ export default function TabLayout() {
          <Tabs.Screen 
       name="Screens/ShellScreen"
       options={{
-        title: 'Shells',
+        title: 'Caves',
         tabBarIcon: ({color,size}) => (
         <MaterialCommunityIcons name= "door-open" color={color} size={size}/>
         ),
@@ -46,7 +46,13 @@ export default function TabLayout() {
         href: null, //so that the screen screen doesnt show 
       }}
       />
-
+      <Tabs.Screen
+      name="Screens/BambooScreen"
+      options={{
+        title: 'Chat with Bamboo',
+        href: null,
+      }}
+      />
     </Tabs>
   );
 }

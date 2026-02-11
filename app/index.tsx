@@ -60,7 +60,7 @@ export default function HomeScreen() {
 
       await AsyncStorage.setItem('@last_mood', JSON.stringify(newEntry)); //date. mood, and current text in box saved here  
        
-      Alert.alert("Entry Saved", "Willow has tucked your thoughts away in the garden.");
+      Alert.alert("Entry Saved", "Thanks for letting the bears know");
       
       // Clearing the note after saving
       setNote('');
